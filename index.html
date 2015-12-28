@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="snippetsApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Angular Snippets">
+    <meta name="author" content="Luis Rojas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap 3.3.5 -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-static-top sticky inbanner" role="navigation">
+          <div class="navbar-logo">
+            
+          </div>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/landing">Inicio</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Snippets <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Snippets</a></li>
+                    </ul>
+                </li>
+            </ul>
+          </div>
+          <!--/.nav-collapse -->
+        </nav>
+    </header>
+    <div class="container page" ng-controller="MyCtrl">
+        <!--div ng-view></div-->
+        <h4>Controllers</h4>
+        <uib-accordion close-others="oneAtATime">
+          <uib-accordion-group>
+            <uib-accordion-heading>
+              1. You wish to increment a model value by 1 using a controller function
+            </uib-accordion-heading>
+              <p>Solution: Implement an increment function that changes the scope.</p>
+              <div>
+                <p ng-click="incrementValue()">Click here to increment {{value}}</p>
+                <a href="https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe2" target="_blank">Reference</a>
+              </div>
+          </uib-accordion-group>
+          <uib-accordion-group>
+            <uib-accordion-heading>
+              2. You wish to share a model between a nested hierarchy of controllers
+            </uib-accordion-heading>
+              <p>Solution: Use Javascript objects instead of primitives or direct $parent scope references.</p>
+              <div>
+                <label>Primitive</label>
+                <input type="text" ng-model="name">
+
+                <label>Object</label>
+                <input type="text" ng-model="user.name">
+
+                <div class="nested" ng-controller="MyNestedCtrl">
+                  <label>Primitive</label>
+                  <input type="text" ng-model="name">
+
+                  <label>Primitive with explicit $parent reference</label>
+                  <input type="text" ng-model="$parent.name">
+
+                  <label>Object</label>
+                  <input type="text" ng-model="user.name">
+                </div>
+              </div>
+              <a href="https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe5" target="_blank">Reference</a>
+          </uib-accordion-group>
+        </uib-accordion> 
+    </div>
+
+    <!-- Scripts -->
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> 
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script> 
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+    <script src="//code.angularjs.org/1.4.2/angular-route.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/MyCtrl.js"></script>
+    <script src="js/controllers/MyNestedCtrl.js"></script>
+    <script src="js/directives/myControlPanel.js"></script>
+    <script src="js/services/MyCtrl.js"></script>
+</body>
+
+</html>

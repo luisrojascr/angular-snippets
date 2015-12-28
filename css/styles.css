@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.nested {
+    border: 1px solid blue;
+    padding: 1em;
+    margin: 1em 0 1em 2em;
+}

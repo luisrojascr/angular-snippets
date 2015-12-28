@@ -1,0 +1,3 @@
+angular.module('snippetsApp').service('MyCtrl', function () {
+  // ...
+});
