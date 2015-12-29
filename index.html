@@ -80,6 +80,21 @@
               </div>
               <a href="https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe5" target="_blank">Reference</a>
           </uib-accordion-group>
+          <uib-accordion-group>
+            <uib-accordion-heading>
+              3. You wish to share business login between controllers
+            </uib-accordion-heading>
+              <p>Solution: Utilise a Service to implement your business login and use dependency injection to use this service in your controllers.</p>
+              <div>
+                <ul ng-repeat="user in users">
+                  <li>{{user}}</li>
+                </ul>
+                <div class="nested" ng-controller="AnotherCtrl">
+                  Nested Controller, First user: {{firstUser}}
+                </div>
+                <a href="https://github.com/fdietz/recipes-with-angular-js-examples/tree/master/chapter2/recipe6" target="_blank">Reference</a>
+              </div>
+          </uib-accordion-group>
         </uib-accordion> 
     </div>
 
@@ -94,8 +109,9 @@
     <script src="js/app.js"></script>
     <script src="js/controllers/MyCtrl.js"></script>
     <script src="js/controllers/MyNestedCtrl.js"></script>
+    <script src="js/controllers/AnotherCtrl.js"></script>
     <script src="js/directives/myControlPanel.js"></script>
-    <script src="js/services/MyCtrl.js"></script>
+    <script src="js/services/UserService.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-angular.module('snippetsApp').controller('MyCtrl', function ($scope, $http) {
+angular.module('snippetsApp').controller('MyCtrl', function ($scope, UserService) {
   
   //Solution 1
   $scope.value = 1;
@@ -12,5 +12,8 @@ angular.module('snippetsApp').controller('MyCtrl', function ($scope, $http) {
   $scope.user = {
     name: "Parker"
   };
+  
+  //solution 3
+  $scope.users = UserService.all();
   
 });
